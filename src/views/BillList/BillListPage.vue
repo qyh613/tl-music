@@ -16,7 +16,7 @@
 
 <script>
 
-/* 榜单 */
+/* 榜单1 */
     import {
         getBillList
     } from '../../api/music-api.js'
