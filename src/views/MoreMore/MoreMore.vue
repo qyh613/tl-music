@@ -13,7 +13,7 @@
                 <img :src="item.pic_big">
                 <p>{{item.title}}</p>
             </div>
-        </van-list> -->
+        </van-list> ccccc -->
     </div>
 </template>
 
