@@ -10,6 +10,8 @@
 
 
 <script>
+
+    // 主页榜单组件
     import BillList from '../../components/BillList.vue';
     import Swipe from '../../components/Swipe.vue';
     import MusicList from '../../components/MusicList.vue';

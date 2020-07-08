@@ -5,10 +5,10 @@
                 <router-link :to="'/index/moreMore/'+type" tag="span">更多</router-link>
             </h3>
             <ul>
-                <li v-for="item in songList" :key="item.song_id">
+                <router-link v-for="item in songList" :key="item.song_id" to="/play" tag="li">
                     <img :src="item.pic_big">
                     <p>{{item.title}}</p>
-                </li>
+                </router-link>
             </ul>
         </div>
     </div>
@@ -17,8 +17,9 @@
 
 <script>
 
-/* 首页布局 */
-    import { getBillList } from '../api/music-api.js';
+    /* 首页布局 */
+    import {getBillList} from '../api/music-api.js';
+
     export default {
 
         props: {
@@ -44,7 +45,7 @@
                 this.songList = res.list
             })
         },
-        
+
     }
 </script>
 

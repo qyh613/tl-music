@@ -19,17 +19,20 @@ export function getBillList(type,size=6,offset=0){
     })
 }
 
-
-
-export function getSongInfo(songId){
+export function geshou(tinguid) {
     return request
-    .get(``)
-    
+        .get(`/v1/restserver/ting/method?method=baidu.ting.artist.getInfo&tinguid=${tinguid}`)
 }
+
+// export function getSongInfo(songId){
+//     return request
+//     .get(``)
+//
+// }
 
 // 获取歌词
-export function getLrc(lrcLink){
-    return request
-    .get(``)
-    
-}
+// export function getLrc(lrcLink){
+//     return request
+//     .get(``)
+//
+// }

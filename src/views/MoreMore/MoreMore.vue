@@ -13,10 +13,8 @@
 </template>
 
 <script>
-    // 1ssss
-    import {
-        getBillList
-    } from '../../api/music-api.js'
+    // 更多页************
+    import {getBillList} from '../../api/music-api.js'
     export default {
         data() {
             return {

@@ -9,6 +9,8 @@
 
 
 <script>
+
+    // 我的组件，
 export default {
     
 
