@@ -7,7 +7,7 @@
 
 
 <script>
-
+ // 榜单页************************
 import BillListPage from '../BillList/BillListPage.vue'
 export default {
     components:{

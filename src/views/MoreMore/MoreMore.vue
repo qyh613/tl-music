@@ -8,12 +8,7 @@
                 </div>
             </van-list>
         </van-pull-refresh>
-        <!-- <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad" class="moreList">
-            <div v-for="item in list" :key="item.song_id">
-                <img :src="item.pic_big">
-                <p>{{item.title}}</p>
-            </div>
-        </van-list> ccccc -->
+
     </div>
 </template>
 
