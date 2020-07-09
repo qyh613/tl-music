@@ -6,14 +6,21 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        qyh: {
-            name: '权一航'
-        },
-        list: [2, 1, 3]
+        billList:[],
+        currentTime :0,
+        process:null
     },
     mutations: {
-        ceshi(state, payload) {
-            state.qyh = payload.qyh
+        // ceshi(state, payload) {
+        //     state.qyh = payload.qyh
+        // }
+
+
+        setCurrentTime(state,payload){
+            state.currentTime=payload.currentTime;
+        },
+        setProess(state,payload){
+            state.process=payload.process;
         }
     },
     getters: {

@@ -1,6 +1,6 @@
 <template>
     <div class="coverBox">
-        <div class="content">
+        <router-link :to="'/index/bill/details/'+this.type" tag="div" class="content">
             <div class="cover">
                 <img :src="this.billboard.pic_s192">
             </div>
@@ -9,17 +9,18 @@
                     {{item.title}}
                 </li>
             </ul>
-        </div>
+        </router-link>
     </div>
 </template>
 
 
 <script>
 
-/* 榜单1 1111*/
+    /* 榜单1 1111*/
     import {
         getBillList
     } from '../../api/music-api.js'
+
     export default {
         data() {
             return {
@@ -74,12 +75,13 @@
                     white-space: nowrap;
                     text-overflow: ellipsis;
                     margin-bottom: 5px;
+
                     span {
                         color: red;
                     }
                 }
             }
-            
+
         }
 
     }

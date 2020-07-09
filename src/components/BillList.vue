@@ -5,7 +5,7 @@
                 <router-link :to="'/index/moreMore/'+type" tag="span">更多</router-link>
             </h3>
             <ul>
-                <router-link v-for="item in songList" :key="item.song_id" to="/play" tag="li">
+                <router-link v-for="item in songList" :key="item.song_id" :to="'/play/'+item.song_id" tag="li">
                     <img :src="item.pic_big">
                     <p>{{item.title}}</p>
                 </router-link>
@@ -38,10 +38,12 @@
         data() {
             return {
                 songList: [],
+                songid:''
             }
         },
         created() {
             getBillList(this.type, this.size).then(res => {
+                // console.log(res)
                 this.songList = res.list
             })
         },

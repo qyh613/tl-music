@@ -1,9 +1,13 @@
 <template>
     <div>
-        <div class="SingerList">
+        <router-link :to="'/index/singerDetails/'+list.ting_uid" tag="div" class="SingerList">
             <img :src="list.avatar_middle" alt="">
             <p>{{list.name}}</p>
-        </div>
+        </router-link>
+        <!--        <div class="SingerList" @click="singerDetails">-->
+        <!--            <img :src="list.avatar_middle" alt="">-->
+        <!--            <p>{{list.name}}</p>-->
+        <!--        </div>-->
     </div>
 </template>
 
@@ -12,14 +16,15 @@
     import {geshou} from "../../api/music-api";
 
     export default {
-        data(){
-            return{
-                list:[]
+        // 歌手页****************************************************
+        data() {
+            return {
+                list: []
             }
         },
-        props:{
-            tinguid:{
-                type:Number
+        props: {
+            tinguid: {
+                type: Number
             }
         },
         created() {
@@ -27,6 +32,11 @@
                 // console.log(res)
                 this.list = res
             });
+        },
+        methods: {
+            singerDetails() {
+                console.log(1)
+            }
         }
     }
 </script>
@@ -36,12 +46,14 @@
     .SingerList {
         display: flex;
         padding: 10px 20px;
-        img{
+
+        img {
             width: 60px;
             height: 60px;
             border-radius: 50%;
         }
-        p{
+
+        p {
             padding-left: 15px;
             line-height: 60px;
         }

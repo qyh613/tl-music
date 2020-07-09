@@ -1,6 +1,6 @@
 <template>
     <div>
-        搜索
+        <SearchBody />
     </div>
 </template>
 
@@ -8,8 +8,12 @@
 
 
 <script>
+import SearchBody from "../Search/SearchBody";
+
 export default {
-    
+    components:{
+        SearchBody
+    }
     
 }
 </script>

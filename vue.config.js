@@ -20,12 +20,22 @@ module.exports={
                 }
             },
             "/tahe-api":{
-                target:"http://59.111.92.205:8088",
+                // http://music.taihe.com
+                target:"http://musicapi.taihe.com",
                 changeOrigin: true,
                 pathRewrite: {
                     '^/tahe-api': ''
                 }
-            }
+            },
+            "/music":{
+                // http://music.taihe.com
+                target:"http://music.taihe.com",
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/music': ''
+                }
+            },
+
         }
     },
 }

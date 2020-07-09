@@ -3,20 +3,28 @@
         <router-link to="/index" tag="i">
             <van-icon name="wap-home-o" color="red"/>
         </router-link>
-        <div class="SongName">歌名</div>
+        <div class="SongName">{{name}}</div>
         <van-icon name="search" color="#999"/>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Header"
+        name: "Header",
+        props:{
+            name:[
+                String
+            ]
+        },
+        created() {
+            // console.log(this.Name)
+        }
     }
 </script>
 
 <style scoped lang="less">
 
-    /*播放页***********************/
+    /*播放页头部***********************/
     .HeaderBox {
         display: flex;
         justify-content: space-between;

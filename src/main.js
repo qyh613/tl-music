@@ -13,7 +13,9 @@ import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 
 // 导入 vant 插件
-import { Swipe, SwipeItem, Tab, Tabs, List,PullRefresh,Cell, CellGroup ,Icon } from 'vant';
+import { Swipe, SwipeItem, Tab, Tabs, List,PullRefresh,Cell, CellGroup ,Icon,Dialog,Toast } from 'vant';
+Vue.use(Toast);
+Vue.use(Dialog);
 Vue.use(Icon);
 Vue.use(Cell);
 Vue.use(CellGroup);

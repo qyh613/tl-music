@@ -31,7 +31,7 @@ const routes = [
                 component: () => import('../views/HomePageContent/Bill.vue'),
                 meta: {
                     title: '榜单'
-                }
+                },
             },
             {
                 path: "my",
@@ -54,14 +54,29 @@ const routes = [
                     title: '更多'
                 },
             },
+            {
+                // 歌手详情页
+                path: "singerDetails/:tinguid",
+                component: () => import('../views/Singer/singerDetails'),
+                meta: {
+                    title: '歌手详情'
+                },
+            },
 
         ]
     },
     {
-        path: "/play",
+        path: "/play/:songid",
         component: () => import('../views/Play/Play'),
         meta: {
             title: '播放'
+        }
+    },
+    {
+        path: "/index/bill/details/:type",
+        component: () => import('../views/BillList/BillDetails'),
+        meta: {
+            title: '榜单'
         }
     },
 ]

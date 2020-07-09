@@ -24,15 +24,26 @@ export function geshou(tinguid) {
         .get(`/v1/restserver/ting/method?method=baidu.ting.artist.getInfo&tinguid=${tinguid}`)
 }
 
-// export function getSongInfo(songId){
-//     return request
-//     .get(``)
-//
-// }
+export function getsearch(searchWord){
+    return request
+    .get(`/v1/restserver/ting?method=baidu.ting.search.catalogSug&query=${searchWord}`)
 
-// 获取歌词
-// export function getLrc(lrcLink){
-//     return request
-//     .get(``)
-//
-// }
+}
+
+// 歌曲详情lyrics
+export function getSongDetails(songid){
+    return request
+    .get(`/v1/restserver/ting?method=baidu.ting.song.play&songid=${songid}`)
+}
+
+
+// 歌词详情
+export function getLyrics(lrclink){
+    return request
+        .get(`/music/data/song/lrc?lrc_link=${lrclink}`)
+}
+
+export function getSinger(tinguid) {
+    const url=`/v1/restserver/ting?method=baidu.ting.artist.getSongList&limits=10&tinguid=${tinguid}`;
+    return request.get(url)
+}
