@@ -19,7 +19,8 @@
                 geci: [],
                 active: 0,
                 noScroll:false,
-                timeoutId:null
+                timeoutId:null,
+
             }
         },
         methods:{
@@ -29,6 +30,7 @@
         },
         props: {
             content: [String],
+
         },
         computed: {
             ...mapState(["currentTime"])

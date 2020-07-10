@@ -2,7 +2,7 @@
     <div>
         <div class="PlayBgc"></div>
         <Header :name="songinfo.title" />
-        <MinImg :ImgSrc="songinfo.pic_radio"/>
+        <MinImg :ImgSrc="songinfo.pic_radio" :rotating="rotating"/>
         <Lyrics :content="Lyricscontent.content" v-if="Lyricscontent.content"/>
         <Operation/>
         <div class="Audio">
@@ -33,7 +33,8 @@
             return{
                 songinfo:{},
                 bitrate:{},
-                Lyricscontent:{}
+                Lyricscontent:{},
+                rotating:false
             }
         },
         created() {
@@ -51,7 +52,13 @@
             this.$refs.audio.addEventListener("timeupdate",()=>{
                 // console.log(this.$refs.audio.currentTime)
                 this.$store.commit("setCurrentTime",{currentTime:this.$refs.audio.currentTime})
-            })
+            });
+            this.$refs.audio.addEventListener("play",()=>{
+                this.rotating = true
+            });
+            this.$refs.audio.addEventListener("pause",()=>{
+                this.rotating = false
+            });
         },
         computed:{
             ...mapState(["process"])

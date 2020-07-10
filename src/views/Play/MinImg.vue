@@ -1,6 +1,6 @@
 <template>
     <div class="MinImgBox">
-        <img :src="ImgSrc" alt="">
+        <img :src="ImgSrc" alt="" :class="rotating?'xuanzhuan':''">
     </div>
 </template>
 
@@ -9,7 +9,8 @@
     export default {
         name: "MinImg",
         props:{
-            ImgSrc:[String]
+            ImgSrc:[String],
+            rotating:[Boolean],
         }
     }
 </script>
@@ -22,6 +23,20 @@
         img{
             height: 100%;
             border-radius: 50%;
+
+
+        }
+        .xuanzhuan {
+            animation: animal 8s linear infinite;
+        }
+
+        @keyframes animal {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
         }
     }
 </style>
